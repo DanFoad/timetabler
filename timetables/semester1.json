@@ -1,0 +1,245 @@
+{
+	"start": "Sep 26, 2016",
+	"end": "Dec 11, 2016",
+	"semester": "autumn",
+	"modules": {
+        "2nd Year Introduction Talk": {
+            "teacher": "Dr Edward Tarte",
+            "code": "INTRO",
+            "sessions": [
+                {
+                    "weeks": [1],
+                    "type": "Talk",
+                    "room": "Arts L6 222",
+                    "day": 1,
+                    "start": "1000",
+                    "end": "1100"
+                }
+            ]
+        },
+		"Project Management and Professional Practice": {
+			"teacher": "Dr Edward Stewart",
+			"code": "EE2G1",
+			"sessions": [
+				{
+					"weeks": [11],
+					"type": "Class test",
+					"room": "Strathcona L4 (G13)",
+					"day": 4,
+					"start": "1000",
+					"end": "1200"
+				},
+				{
+					"weeks": [1,2,3,4,5,6,7,8,9,11],
+					"type": "Lecture",
+					"room": "Strathcona L1 (G18)",
+					"day": 5,
+					"start": "1200",
+					"end": "1300"
+				},
+				{
+					"weeks": [1,3,4,5,8,11],
+					"type": "Lecture",
+					"room": "Strathcona L4 (G13)",
+					"day": 5,
+					"start": "1500",
+					"end": "1700"
+				},
+				{
+					"weeks": [2,6,9],
+					"type": "Lecture",
+					"room": "Strathcona L1 (G18)",
+					"day": 5,
+					"start": "1500",
+					"end": "1600"
+				}
+			]
+		},
+		"Computer Systems, Algorithms and Data Structures": {
+			"teacher": "Prof Peter Gardner",
+			"code": "EE2K1",
+			"sessions": [
+				{
+					"weeks": [3,4,5,6,7,8,9,10,11],
+					"type": "Lecture",
+					"room": "Arts 201",
+					"day": 1,
+					"start": "0900",
+					"end": "1000"
+				},
+				{
+					"weeks": [1,3,4,5,6,7,8,9,10],
+					"type": "Lecture",
+					"room": "Gkap N123",
+					"day": 3,
+					"start": "1100",
+					"end": "1200"
+				},
+				{
+					"weeks": [5],
+					"type": "Laboratory Practical",
+					"room": "Gkap N216",
+					"day": 4,
+					"start": "1400",
+					"end": "1600"
+				},
+				{
+					"weeks": [7,10],
+					"type": "Laboratory Practical",
+					"room": "Gkap N337",
+					"day": 4,
+					"start": "1400",
+					"end": "1700"
+				},
+                {
+				    "weeks": [4,6,9],
+					"type": "Tutorial",
+					"room": "Gkap N521",
+					"day": 4,
+					"start": "1500",
+					"end": "1600"
+                }
+			]
+		},
+		"Introduction to Human Performance": {
+			"teacher": "Prof Chris Baber",
+			"code": "27684",
+			"sessions": [
+				{
+					"weeks": [1,2,3,4,5,6,7,8,9,10,11],
+					"type": "Lecture",
+					"room": "Metallurgy GD20",
+					"day": 2,
+					"start": "1500",
+					"end": "1700"
+				}
+			]
+		},
+		"Intermediate Maths for Applied Computing": {
+			"teacher": "",
+			"code": "23520",
+			"sessions": []
+		},
+		"Object Oriented Software Design and Java Programming": {
+			"teacher": "Dr Mike Spann",
+			"code": "EE2E2",
+			"sessions": [
+				{
+					"weeks": [11],
+					"type": "Practical/Workshop",
+					"room": "MechEng F32",
+					"day": 1,
+					"start": "1100",
+					"end": "1300"
+				},
+				{
+					"weeks": [10,11],
+					"type": "Lecture",
+					"room": "MechEng F32",
+					"day": 1,
+					"start": "1400",
+					"end": "1600"
+				},
+				{
+					"weeks": [4,5,6,9,10],
+					"type": "Laboratory Practical",
+					"room": "Gkap N419",
+					"day": 2,
+					"start": "1400",
+					"end": "1700"
+				},
+				{
+					"weeks": [5,8,9,10],
+					"type": "Lecture",
+					"room": "Gkap N123",
+					"day": 2,
+					"start": "1400",
+					"end": "1500"
+				},
+				{
+					"weeks": [4,5],
+					"type": "Lecture",
+					"room": "MechEng F32",
+					"day": 4,
+					"start": "0900",
+					"end": "1000"
+				},
+				{
+					"weeks": [5,6,8,9,10,11],
+					"type": "Lecture",
+					"room": "MechEng F32",
+					"day": 5,
+					"start": "1100",
+					"end": "1200"
+				},
+				{
+					"weeks": [1,3,4,5,6,8,11],
+					"type": "Lecture",
+					"room": "MechEng F32",
+					"day": 5,
+					"start": "1400",
+					"end": "1500"
+				}
+			]
+		},
+		"Digital Systems and Embedded Computing": {
+			"teacher": "Mr Philip Atkins",
+			"code": "EE2A",
+			"sessions": [
+				{
+					"weeks": [1,2,3],
+					"type": "Lecture",
+					"room": "Strathcona L4 G13",
+					"day": 1,
+					"start": "1200",
+					"end": "1300"
+				},
+				{
+					"weeks": [4,5,6,8,9,10],
+					"type": "Laboratory Practical",
+					"room": "Gkap N207",
+					"day": 1,
+					"start": "1400",
+					"end": "1700"
+				},
+				{
+					"weeks": [11],
+					"type": "Laboratory Practical",
+					"room": "Gkap NG22",
+					"day": 1,
+					"start": "1400",
+					"end": "1700"
+				},
+				{
+					"weeks": [4,8],
+					"type": "Tutorial",
+					"room": "TBD",
+					"day": 3,
+					"start": "1000",
+					"end": "1100"
+				},
+				{
+					"weeks": [1,2,3],
+					"type": "Lecture",
+					"room": "Arts Lecture Room 1",
+					"day": 4,
+					"start": "0900",
+					"end": "1000"
+				},
+				{
+					"weeks": [1,2,3,4,5,6,8],
+					"type": "Lecture",
+					"room": "Strathcona L4 G13",
+					"day": 4,
+					"start": "1000",
+					"end": "1200"
+				}
+			]
+		},
+		"Design": {
+			"teacher": "",
+			"code": "14568",
+			"sessions": []
+		}
+	}
+}

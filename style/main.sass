@@ -1,0 +1,517 @@
+$hue: 200
+$light: #F5F5F5
+/**** GENERAL ****/
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: Roboto, sans-serif
+
+html, body
+    width: 100%
+    height: 100%
+
+body
+    font-size: 67.5%
+
+.main__container
+    min-height: 100%
+    min-height: calc(100vh - 72px)
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: hidden
+
+.dropdown
+    display: inline-block
+    height: 32px
+    line-height: 32px
+    border-bottom: 2px solid hsl($hue, 10, 50)
+    color: hsl($hue, 10, 50)
+    text-decoration: none
+    text-transform: uppercase
+    font-weight: 600
+    
+    & span
+        margin-right: 8px
+        
+#loader
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    z-index: 10000
+    background: url("loader.gif") 50% 50% no-repeat #FFFFFF
+
+
+/**** HEADER ****/
+.header
+    background-color: hsl($hue,17,26)
+    color: hsl($hue, 7, 57)
+    height: 72px
+    line-height: 72px
+    
+.header__title
+    display: inline-flex
+    flex-flow: row nowrap
+    justify-content: flex-start
+    width: 100%
+    
+    & h1
+        display: inline-block
+        color: $light
+        font-size: 1.6em
+        padding-left: 32px
+        position: relative
+        
+        & img
+            display: inline-block
+            height: 32px
+            vertical-align: middle
+            position: relative
+            top: -4px
+        
+    & div
+        display: inline-block
+
+/**** SIDEBAR ****/
+.sidebar
+    background-color: hsl($hue, 15, 31)
+    position: relative
+    width: 272px
+    margin-left: -272px
+    color: hsl($hue, 14, 70)
+    transition: margin 0.5s ease-in-out
+    position: relative
+
+.sidebar.open
+    margin-left: 0
+
+.sidebar h2
+    text-transform: uppercase
+    font-weight: normal
+    font-size: 1.2em
+    padding: 32px
+    margin-top: 16px
+    
+.sidenav
+    list-style: none
+    
+    & li
+        height: 32px
+        line-height: 32px
+        margin: 16px 0
+        text-transform: uppercase
+        font-weight: 600
+        letter-spacing: 0.5px
+        color: hsl($hue, 13, 68)
+
+    & a
+        color: inherit
+        text-decoration: none
+        display: inline-block
+        height: 100%
+        width: 100%
+        padding-left: 32px
+        
+        &.current
+            color: $light
+            border-left: 4px solid hsl($hue, 37, 65)
+            padding-left: 28px
+
+.contact
+    position: absolute
+    left: 0;
+    bottom: 0
+    padding: 8px
+    
+    & a, & a:visited
+        color: hsl($hue, 37, 65)
+        text-decoration: none
+
+/**** MAIN ****/
+main
+    flex: 1
+    background-color: hsl($hue, 26, 91)
+
+.timetable__selector
+    height: 48px
+    line-height: 48px
+    background-color: $light
+    position: relative
+    
+.weekDropdown
+    margin-left: 32px
+    padding: 0 8px
+    width: 128px
+    position: relative
+    
+    & i
+        position: absolute
+        right: 0
+        bottom: 0
+        top: 6px
+        width: 16px
+        height: 16px
+        margin: auto 0
+        transition: 0.25s ease-in-out
+        
+        &.open
+            transform: rotate(-180deg)
+            top: -6px
+            right: 6px
+    
+.weekSelector
+    float: right
+    padding-right: 64px
+
+    & span
+        font-weight: 600
+        text-transform: uppercase
+        font-size: 1.1em
+        margin: 0 16px
+        cursor: pointer
+        -webkit-touch-callout: none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+        display: inline-block
+        width: 88px
+        text-align: right
+        
+    & .weekSelector--previous, & .weekSelector--next
+        color: hsl($hue, 19, 79)
+    
+    & .weekSelector--current
+        color: hsl($hue, 10, 50)
+
+#weekchooser
+    max-height: 0;
+    overflow-y: hidden
+    position: absolute
+    left: 32px
+    top: 39px
+    background-color: hsl($hue, 20, 85)
+    list-style: none
+    width: 128px
+    border-bottom: 2px solid hsl($hue, 10, 50)
+    -webkit-transition: .25s ease-in-out
+    -moz-transition: .25s ease-in-out
+    -o-transition: .25s ease-in-out
+    transition: .25s ease-in-out
+    pointer-events: none
+        
+    &.open
+        max-height: 352px
+        pointer-events: auto
+        
+    & li
+        height: 32px
+        line-height: 32px
+        padding-left: 8px
+        color: hsl($hue, 10, 50)
+        font-weight: 600
+        text-transform: uppercase
+        cursor: pointer
+        
+        &:hover
+            background-color: hsl($hue, 20, 75)
+
+.weekDropdown__prompt
+    display: none
+
+.timetable__mobile
+    display: none
+        
+.timetable__schedule
+    list-style: none
+    margin: 16px 8px 0
+    background-color: $light
+    border-radius: 4px
+    
+    & li
+        display: flex
+        flex-flow: row nowrap
+        height: 48px
+        font-size: 1.2em
+        border-bottom: 1px solid hsl($hue, 10, 80)
+        
+        &:last-child
+            border-bottom: 0
+        
+        & span
+            height: 20px
+            line-height: 20px
+            display: inline-block
+        
+        & aside
+            display: inline-flex
+            flex-flow: column nowrap
+            width: 64px
+            font-weight: 600
+            padding: 4px 0 4px 8px
+            color: hsl($hue, 20, 35)
+        
+        & article
+            flex: 1
+            padding: 4px 0
+            display: inline-flex
+            flex-flow: column nowrap
+            color: hsl($hue, 10, 50)
+    
+@media screen and (max-width: 720px)
+    
+    .timetable__mobile
+        display: block
+        
+    .timetable__tabs
+        display: flex
+        flex-flow: row nowrap
+        list-style: none
+        height: 32px
+        line-height: 32px
+        margin: 32px 8px 0
+        background-color: hsl($hue, 20, 75)
+        border-radius: 4px;
+        
+        & li
+            flex: 1
+            text-align: center
+            border-left: 1px solid hsl($hue, 20, 65)
+            color: hsl($hue, 12, 36)
+            
+            &.selected
+                background-color: hsl($hue, 20, 65)
+            
+            &:first-child
+                border-left: 0
+                border-top-left-radius: 4px
+                border-bottom-left-radius: 4px
+            
+            &:last-child
+                border-top-right-radius: 4px
+                border-bottom-right-radius: 4px
+    
+    .weekDropdown__prompt
+        display: inline-block
+        text-transform: uppercase
+        font-size: 0.9em
+        font-weight: 600
+        width: 128px
+        text-align: right
+        color: hsl($hue, 10, 50)
+    
+    #weekchooser
+        left: 160px
+    
+    .timetable__selector
+        height: 96px
+        
+        & .weekSelector
+            border-top: 1px solid hsl($hue, 10, 80)
+            width: 100%
+            float: none
+            display: inline-flex
+            flex-flow: row nowrap
+            align-items: center
+            justify-content: space-between
+            padding-right: 0
+            
+            & span
+                height: 48px
+                text-align: center
+            
+        
+
+/**** TIMETABLE TABLE ****/
+.timetable__table
+    margin: 48px auto
+    width: 80%
+    border-spacing: 2px
+    
+    tr
+        height: 64px
+    
+    th, td
+        width: 16.66666667%
+        text-align: left
+        padding-left: 24px
+        
+    th
+        background-color: hsl($hue, 18, 93)
+        border: 2px solid $light
+        color: hsl($hue, 11, 46)
+        text-transform: uppercase
+    
+    td
+        background-color: $light
+        position: relative
+        cursor: pointer
+        -webkit-touch-callout: none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+    
+    tr:first-child th:first-child
+        border-top-left-radius: 6px
+    
+    tr:first-child th:last-child
+        border-top-right-radius: 6px
+    
+    tr:last-child th:first-child
+        border-bottom-left-radius: 6px
+    
+    tr:last-child td:last-child
+        border-bottom-right-radius: 6px
+    
+    td.connected-top:after
+        content: "";
+        position: absolute
+        height: 2px
+        width: 100%
+        background-color: inherit
+        left: 0
+        bottom: -2px
+    
+    td.connected-bottom:after
+        content: "";
+        position: absolute
+        height: 2px
+        width: 100%
+        background-color: inherit
+        left: 0
+        top: -2px
+    
+    td.connected-middle:after
+        content: "";
+        position: absolute
+        height: 2px
+        width: 100%
+        background-color: inherit
+        left: 0
+        bottom: -2px
+        
+    td.connected-middle:before
+        content: "";
+        position: absolute
+        height: 2px
+        width: 100%
+        background-color: inherit
+        left: 0
+        top: -2px
+    
+    td.selected
+        background-color: hsl($hue, 43, 85)
+        box-shadow: 0 0 0 2px hsl($hue, 33, 60)
+        
+        & p.title, & p.info
+            color: hsl($hue, 33, 60)
+        
+    
+    p.title
+        text-transform: uppercase
+        font-weight: 600
+        color: hsl($hue, 14, 31)
+        padding-bottom: 8px
+
+    p.info
+        color: hsl($hue, 10, 70)
+        font-weight: 600
+        
+/**** NAVICON ****/
+.menutoggle__container
+    cursor: pointer
+    outline: none
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    margin-left: 24px
+    
+    & .menutoggle__text
+        text-transform: uppercase
+        font-weight: 600
+        margin-left: 8px
+        display: inline-block
+        width: 64px
+    
+.header__menutoggle
+    width: 16px
+    height: 16px
+    top: 5px
+    position: relative
+    -webkit-transform: rotate(0deg)
+    -moz-transform: rotate(0deg)
+    -o-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transition: .5s ease-in-out
+    -moz-transition: .5s ease-in-out
+    -o-transition: .5s ease-in-out
+    transition: .5s ease-in-out
+    
+    & span
+        display: block
+        position: absolute
+        height: 2px
+        width: 100%
+        background: #728183
+        border-radius: 9px
+        opacity: 1
+        left: 0
+        -webkit-transform: rotate(0deg)
+        -moz-transform: rotate(0deg)
+        -o-transform: rotate(0deg)
+        transform: rotate(0deg)
+        -webkit-transition: .25s ease-in-out
+        -moz-transition: .25s ease-in-out
+        -o-transition: .25s ease-in-out
+        transition: .25s ease-in-out
+            
+        &:nth-child(1)
+            top: 0px
+            -webkit-transform-origin: left center
+            -moz-transform-origin: left center
+            -o-transform-origin: left center
+            transform-origin: left center
+        
+        &:nth-child(2)
+            top: 6px
+            -webkit-transform-origin: left center
+            -moz-transform-origin: left center
+            -o-transform-origin: left center
+            transform-origin: left center
+        
+        &:nth-child(3)
+            top: 12px
+            -webkit-transform-origin: left center
+            -moz-transform-origin: left center
+            -o-transform-origin: left center
+            transform-origin: left center
+
+.header__menutoggle.open span
+    &:nth-child(1)
+        -webkit-transform: rotate(-25deg)
+        -moz-transform: rotate(-25deg)
+        -o-transform: rotate(-25deg)
+        transform: rotate(-25deg)
+        top: 6px
+        width: 50%
+    
+    &:nth-child(2)
+        top: 6px
+    
+    &:nth-child(3)
+        -w
+        -moz-transform: rotate(25deg)
+        -o-transform: rotate(25deg)
+        transform: rotate(25deg)
+        top: 6px
+        width: 50%

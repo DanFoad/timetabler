@@ -1,0 +1,538 @@
+/**** GENERAL ****/
+/* line 4, C:/Users/Dan Foad/sites/timetable/main.sass */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif; }
+
+/* line 10, C:/Users/Dan Foad/sites/timetable/main.sass */
+html, body {
+  width: 100%;
+  height: 100%; }
+
+/* line 14, C:/Users/Dan Foad/sites/timetable/main.sass */
+body {
+  font-size: 67.5%; }
+
+/* line 17, C:/Users/Dan Foad/sites/timetable/main.sass */
+.main__container {
+  min-height: 100%;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: hidden; }
+
+/* line 24, C:/Users/Dan Foad/sites/timetable/main.sass */
+.dropdown {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  border-bottom: 2px solid #73848c;
+  color: #73848c;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600; }
+  /* line 34, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .dropdown span {
+    margin-right: 8px; }
+
+/* line 37, C:/Users/Dan Foad/sites/timetable/main.sass */
+#loader {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: url("loader.gif") 50% 50% no-repeat #FFFFFF; }
+
+/**** HEADER ****/
+/* line 50, C:/Users/Dan Foad/sites/timetable/main.sass */
+.header {
+  background-color: #37464e;
+  color: #8a9499;
+  height: 72px;
+  line-height: 72px; }
+
+/* line 56, C:/Users/Dan Foad/sites/timetable/main.sass */
+.header__title {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  width: 100%; }
+  /* line 62, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .header__title h1 {
+    display: inline-block;
+    color: #F5F5F5;
+    font-size: 1.6em;
+    padding-left: 32px;
+    position: relative; }
+    /* line 69, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .header__title h1 img {
+      display: inline-block;
+      height: 32px;
+      vertical-align: middle;
+      position: relative;
+      top: -4px; }
+  /* line 76, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .header__title div {
+    display: inline-block; }
+
+/**** SIDEBAR ****/
+/* line 80, C:/Users/Dan Foad/sites/timetable/main.sass */
+.sidebar {
+  background-color: #43535b;
+  position: relative;
+  width: 272px;
+  margin-left: -272px;
+  color: #a8b6bd;
+  transition: margin 0.5s ease-in-out;
+  position: relative; }
+
+/* line 89, C:/Users/Dan Foad/sites/timetable/main.sass */
+.sidebar.open {
+  margin-left: 0; }
+
+/* line 92, C:/Users/Dan Foad/sites/timetable/main.sass */
+.sidebar h2 {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.2em;
+  padding: 32px;
+  margin-top: 16px; }
+
+/* line 99, C:/Users/Dan Foad/sites/timetable/main.sass */
+.sidenav {
+  list-style: none; }
+  /* line 102, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .sidenav li {
+    height: 32px;
+    line-height: 32px;
+    margin: 16px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #a3b1b8; }
+  /* line 111, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .sidenav a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding-left: 32px; }
+    /* line 119, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .sidenav a.current {
+      color: #F5F5F5;
+      border-left: 4px solid #85b1c7;
+      padding-left: 28px; }
+
+/* line 124, C:/Users/Dan Foad/sites/timetable/main.sass */
+.contact {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 8px; }
+  /* line 130, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .contact a, .contact a:visited {
+    color: #85b1c7;
+    text-decoration: none; }
+
+/**** MAIN ****/
+/* line 135, C:/Users/Dan Foad/sites/timetable/main.sass */
+main {
+  flex: 1;
+  background-color: #e2eaee; }
+
+/* line 139, C:/Users/Dan Foad/sites/timetable/main.sass */
+.timetable__selector {
+  height: 48px;
+  line-height: 48px;
+  background-color: #F5F5F5;
+  position: relative; }
+
+/* line 145, C:/Users/Dan Foad/sites/timetable/main.sass */
+.weekDropdown {
+  margin-left: 32px;
+  padding: 0 8px;
+  width: 128px;
+  position: relative; }
+  /* line 151, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .weekDropdown i {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    margin: auto 0;
+    transition: 0.25s ease-in-out; }
+    /* line 161, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .weekDropdown i.open {
+      transform: rotate(-180deg);
+      top: -6px;
+      right: 6px; }
+
+/* line 166, C:/Users/Dan Foad/sites/timetable/main.sass */
+.weekSelector {
+  float: right;
+  padding-right: 64px; }
+  /* line 170, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .weekSelector span {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    margin: 0 16px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    width: 88px;
+    text-align: right; }
+  /* line 186, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .weekSelector .weekSelector--previous, .weekSelector .weekSelector--next {
+    color: #bfcdd4; }
+  /* line 189, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .weekSelector .weekSelector--current {
+    color: #73848c; }
+
+/* line 192, C:/Users/Dan Foad/sites/timetable/main.sass */
+#weekchooser {
+  max-height: 0;
+  overflow-y: hidden;
+  position: absolute;
+  left: 32px;
+  top: 39px;
+  background-color: #d1dbe0;
+  list-style: none;
+  width: 128px;
+  border-bottom: 2px solid #73848c;
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+  pointer-events: none; }
+  /* line 208, C:/Users/Dan Foad/sites/timetable/main.sass */
+  #weekchooser.open {
+    max-height: 352px;
+    pointer-events: auto; }
+  /* line 212, C:/Users/Dan Foad/sites/timetable/main.sass */
+  #weekchooser li {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 8px;
+    color: #73848c;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer; }
+    /* line 221, C:/Users/Dan Foad/sites/timetable/main.sass */
+    #weekchooser li:hover {
+      background-color: #b3c3cc; }
+
+/* line 224, C:/Users/Dan Foad/sites/timetable/main.sass */
+.weekDropdown__prompt {
+  display: none; }
+
+/* line 227, C:/Users/Dan Foad/sites/timetable/main.sass */
+.timetable__mobile {
+  display: none; }
+
+/* line 230, C:/Users/Dan Foad/sites/timetable/main.sass */
+.timetable__schedule {
+  list-style: none;
+  margin: 16px 8px 0;
+  background-color: #F5F5F5;
+  border-radius: 4px; }
+  /* line 236, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__schedule li {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 48px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #c7ced1; }
+    /* line 243, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__schedule li:last-child {
+      border-bottom: 0; }
+    /* line 246, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__schedule li span {
+      height: 20px;
+      line-height: 20px;
+      display: inline-block; }
+    /* line 251, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__schedule li aside {
+      display: inline-flex;
+      flex-flow: column nowrap;
+      width: 64px;
+      font-weight: 600;
+      padding: 4px 0 4px 8px;
+      color: #475f6b; }
+    /* line 259, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__schedule li article {
+      flex: 1;
+      padding: 4px 0;
+      display: inline-flex;
+      flex-flow: column nowrap;
+      color: #73848c; }
+
+@media screen and (max-width: 720px) {
+  /* line 268, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__mobile {
+    display: block; }
+  /* line 271, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__tabs {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    height: 32px;
+    line-height: 32px;
+    margin: 32px 8px 0;
+    background-color: #b3c3cc;
+    border-radius: 4px; }
+    /* line 281, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__tabs li {
+      flex: 1;
+      text-align: center;
+      border-left: 1px solid #94acb8;
+      color: #515f67; }
+      /* line 287, C:/Users/Dan Foad/sites/timetable/main.sass */
+      .timetable__tabs li.selected {
+        background-color: #94acb8; }
+      /* line 290, C:/Users/Dan Foad/sites/timetable/main.sass */
+      .timetable__tabs li:first-child {
+        border-left: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px; }
+      /* line 295, C:/Users/Dan Foad/sites/timetable/main.sass */
+      .timetable__tabs li:last-child {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px; }
+  /* line 299, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .weekDropdown__prompt {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 600;
+    width: 128px;
+    text-align: right;
+    color: #73848c; }
+  /* line 308, C:/Users/Dan Foad/sites/timetable/main.sass */
+  #weekchooser {
+    left: 160px; }
+  /* line 311, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__selector {
+    height: 96px; }
+    /* line 314, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__selector .weekSelector {
+      border-top: 1px solid #c7ced1;
+      width: 100%;
+      float: none;
+      display: inline-flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 0; }
+      /* line 324, C:/Users/Dan Foad/sites/timetable/main.sass */
+      .timetable__selector .weekSelector span {
+        height: 48px;
+        text-align: center; } }
+
+/**** TIMETABLE TABLE ****/
+/* line 331, C:/Users/Dan Foad/sites/timetable/main.sass */
+.timetable__table {
+  margin: 48px auto;
+  width: 80%;
+  border-spacing: 2px; }
+  /* line 336, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table tr {
+    height: 64px; }
+  /* line 339, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table th, .timetable__table td {
+    width: 16.66666667%;
+    text-align: left;
+    padding-left: 24px; }
+  /* line 344, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table th {
+    background-color: #eaeef0;
+    border: 2px solid #F5F5F5;
+    color: #687a82;
+    text-transform: uppercase; }
+  /* line 350, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table td {
+    background-color: #F5F5F5;
+    position: relative;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  /* line 361, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table tr:first-child th:first-child {
+    border-top-left-radius: 6px; }
+  /* line 364, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table tr:first-child th:last-child {
+    border-top-right-radius: 6px; }
+  /* line 367, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table tr:last-child th:first-child {
+    border-bottom-left-radius: 6px; }
+  /* line 370, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table tr:last-child td:last-child {
+    border-bottom-right-radius: 6px; }
+  /* line 373, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table td.connected-top:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: inherit;
+    left: 0;
+    bottom: -2px; }
+  /* line 382, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table td.connected-bottom:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: inherit;
+    left: 0;
+    top: -2px; }
+  /* line 391, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table td.connected-middle:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: inherit;
+    left: 0;
+    bottom: -2px; }
+  /* line 400, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table td.connected-middle:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: inherit;
+    left: 0;
+    top: -2px; }
+  /* line 409, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table td.selected {
+    background-color: #c8dee9;
+    box-shadow: 0 0 0 2px #77a4bb; }
+    /* line 413, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .timetable__table td.selected p.title, .timetable__table td.selected p.info {
+      color: #77a4bb; }
+  /* line 417, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table p.title {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #44535a;
+    padding-bottom: 8px; }
+  /* line 423, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .timetable__table p.info {
+    color: #abb5ba;
+    font-weight: 600; }
+
+/**** NAVICON ****/
+/* line 428, C:/Users/Dan Foad/sites/timetable/main.sass */
+.menutoggle__container {
+  cursor: pointer;
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 24px; }
+  /* line 439, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .menutoggle__container .menutoggle__text {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 8px;
+    display: inline-block;
+    width: 64px; }
+
+/* line 446, C:/Users/Dan Foad/sites/timetable/main.sass */
+.header__menutoggle {
+  width: 16px;
+  height: 16px;
+  top: 5px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out; }
+  /* line 460, C:/Users/Dan Foad/sites/timetable/main.sass */
+  .header__menutoggle span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #728183;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out; }
+    /* line 478, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .header__menutoggle span:nth-child(1) {
+      top: 0px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center; }
+    /* line 485, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .header__menutoggle span:nth-child(2) {
+      top: 6px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center; }
+    /* line 492, C:/Users/Dan Foad/sites/timetable/main.sass */
+    .header__menutoggle span:nth-child(3) {
+      top: 12px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center; }
+
+/* line 500, C:/Users/Dan Foad/sites/timetable/main.sass */
+.header__menutoggle.open span:nth-child(1) {
+  -webkit-transform: rotate(-25deg);
+  -moz-transform: rotate(-25deg);
+  -o-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+  top: 6px;
+  width: 50%; }
+
+/* line 508, C:/Users/Dan Foad/sites/timetable/main.sass */
+.header__menutoggle.open span:nth-child(2) {
+  top: 6px; }
+
+/* line 511, C:/Users/Dan Foad/sites/timetable/main.sass */
+.header__menutoggle.open span:nth-child(3) {
+  -moz-transform: rotate(25deg);
+  -o-transform: rotate(25deg);
+  transform: rotate(25deg);
+  top: 6px;
+  width: 50%; }
+
+/*# sourceMappingURL=main.css.map */
